@@ -1,0 +1,5 @@
+build:
+  docker:
+      worker: /src/Dockerfile
+run:
+   worker: npm i --location=global pm2 && pm2 start franxx.js --deep-monitoring --attach

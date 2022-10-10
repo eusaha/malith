@@ -1,0 +1,69 @@
+{
+  "name": "Zero-Two-Md",
+  "description": "A Whatsapp md bot build with nodejs",
+  "repository": "https://github.com/sampandey001/Zero-Two-Md",
+  "logo": "https://user-images.githubusercontent.com/104565822/177012232-97866d97-0798-4ca2-9e56-5d0a2413642b.png",
+  "keywords": ["nodejs", "bot", "whatsapp bot", "Zero-Two", "multi device"],
+  "success_url": "/",
+
+"env": {
+  "BOT_NAME": {
+  "description": "Name of your bot",
+   "value": "Zero-Two-Botto"
+  },
+  "OWNER_NAME": {
+  "description": "Name of Bot Owner",
+      "value": "Ikshwaku Pandey"
+  },
+  "BOT_OWNER": {
+    "description": "The phone numbers of the users who you want to be admin for the bot (should be in international format without + and multiple numbers must be separated by a comma \",\")",
+       "value": "919628516236"
+  },
+  "OPENAI_API_KEY": {
+    "description": "Put your OPENAI key here.If you don't have just go on beta.openai.com/signup and get your key.",
+       "value": "Paste here"
+  },
+  "MONGODB_URI": {
+    "description": "A secret String for Mongodb Connection.(Required)"
+  },
+    "LANGUAGE": {
+    "description": "Language you want to use, please enter correct lang code.only english version avilable for now. Use EN-English, SP-Spanish Hi-Hindi.",
+     "value": "EN"
+  },
+    "WORKTYPE": {
+  "description": "Worktype of your bot. Use public or private, if it is private then only bot number can use it. If public then everyone can use it.",
+         "value": "public"
+  },
+  "SPACK_NAME": {
+    "description": "Put Your Sticker Pack Name",
+     "value": "Zero-Two",
+     "required": false
+  }
+},
+   "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+     "url": "https://github.com/ItsJimi/heroku-buildpack-pm2"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    },
+    {
+      "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
+    }
+  ],
+  "addons": [
+      {
+          "plan": "heroku-postgresql"
+      }
+  ],
+ 
+  "formation": {
+      "worker": {
+          "quantity": 1,
+          "size": "free"
+      }
+  }
+}
